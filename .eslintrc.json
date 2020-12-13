@@ -29,6 +29,7 @@
         ]
       }
     ],
+    "react/forbid-prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
