@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { CREATE_BOOK } from '../actions';
 
 const Categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+const defaultCat = Categories[0];
 
 class BooksForm extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class BooksForm extends Component {
     this.state = {
       id: null,
       title: '',
-      category: '',
+      category: defaultCat,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -31,7 +32,7 @@ class BooksForm extends Component {
     const { CREATE_BOOK } = this.props;
     const book = { ...this.state, id: Math.random() };
     CREATE_BOOK(book);
-    this.setState({ title: '', category: '' });
+    this.setState({ title: '', category: defaultCat });
   }
 
   render() {
@@ -44,7 +45,7 @@ class BooksForm extends Component {
               Categories.map(category => (<option key={category}>{category}</option>))
             }
         </select>
-        <button type="submit" onClick={this.handleSubmit}>Create a Book</button>
+        <button type="button" onClick={this.handleSubmit}>Create a Book</button>
       </form>
     );
   }
