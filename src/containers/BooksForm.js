@@ -35,14 +35,15 @@ class BooksForm extends Component {
   }
 
   render() {
-    const { title, category } = this.state;
+    const { title } = this.state;
     return (
       <form>
         <input type="text" onChange={e => this.handleChange(e.target)} value={title} />
-        <select onChange={e => this.handleChange(e.target)} value={category}>
+        <select onChange={e => this.handleChange(e.target)}>
+          <option disabled selected>Categories</option>
           {
-              Categories.map(category => (<option key={category}>{category}</option>))
-            }
+            Categories.map(category => (<option key={category}>{category}</option>))
+          }
         </select>
         <button type="button" onClick={this.handleSubmit}>Create a Book</button>
       </form>
