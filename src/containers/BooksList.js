@@ -9,20 +9,9 @@ const BooksList = ({ books, REMOVE_BOOK }) => {
 
   return (
     <>
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          { books.map(book => (
-            <Book book={book} key={book.id} removeBook={handleRemoveBook} />
-          ))}
-        </tbody>
-      </table>
+      { books.map(book => (
+        <Book book={book} key={book.id} removeBook={handleRemoveBook} />
+      ))}
     </>
   );
 };

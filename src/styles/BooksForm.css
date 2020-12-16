@@ -1,0 +1,50 @@
+form {
+  margin-top: 40px;
+  border-top: 2px solid #e8e8e8;
+  padding-top: 29px;
+}
+
+form h2 {
+  margin-bottom: 19px;
+  font-size: 20px;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.form-main {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-main input,
+.form-main select {
+  border: 2px solid #e8e8e8;
+  outline: none;
+  padding: 0 17px;
+  letter-spacing: -0.15px;
+  font-size: 16px;
+  height: 45px;
+}
+
+.form-main input {
+  width: 58%;
+  color: #000;
+}
+
+.form-main select {
+  width: 25%;
+}
+
+.form-main button {
+  width: 13%;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  height: 45px;
+}
