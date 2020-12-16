@@ -1,31 +1,17 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { REMOVE_BOOK, CHANGE_FILTER } from '../actions';
-import CategoryFilter from '../components/CategoryFilter';
+import { REMOVE_BOOK } from '../actions';
 import sortBooksByFilter from '../selectors';
 
-const BooksList = ({ books, REMOVE_BOOK, CHANGE_FILTER }) => {
+const BooksList = ({ books, REMOVE_BOOK }) => {
   const handleRemoveBook = book => REMOVE_BOOK(book);
-  const handleFilterChange = value => CHANGE_FILTER(value);
 
   return (
     <>
-      <CategoryFilter filterChange={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          { books.map(book => (
-            <Book book={book} key={book.id} removeBook={handleRemoveBook} />
-          ))}
-        </tbody>
-      </table>
+      { books.map(book => (
+        <Book book={book} key={book.id} removeBook={handleRemoveBook} />
+      ))}
     </>
   );
 };
@@ -33,7 +19,6 @@ const BooksList = ({ books, REMOVE_BOOK, CHANGE_FILTER }) => {
 BooksList.propTypes = {
   books: PropTypes.array.isRequired,
   REMOVE_BOOK: PropTypes.func.isRequired,
-  CHANGE_FILTER: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ books, filter }) => {
@@ -47,7 +32,7 @@ const mapStateToProps = ({ books, filter }) => {
 // Exports BooksList
 export default connect(
   mapStateToProps,
-  { REMOVE_BOOK, CHANGE_FILTER },
+  { REMOVE_BOOK },
 )(BooksList);
 
 // export default BooksList;

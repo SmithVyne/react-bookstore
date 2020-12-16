@@ -3,8 +3,8 @@ import { Categories } from '../containers/BooksForm';
 
 const filterCategories = ['All', ...Categories];
 const CategoryFilter = ({ filterChange }) => (
-  <select onChange={e => filterChange(e.target.value)}>
-    <option disabled selected>Filter Categories</option>
+  <select onChange={e => filterChange(e.target.value)} className="nav-links">
+    <option disabled selected>Categories</option>
     {
       filterCategories.map(category => (<option key={category}>{category}</option>))
     }
